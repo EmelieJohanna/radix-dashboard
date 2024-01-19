@@ -1,4 +1,4 @@
-import { Card, Flex, Heading, Tabs } from "@radix-ui/themes";
+import { Card, Flex, Heading } from "@radix-ui/themes";
 import Cards from "./Card.jsx";
 import {
   PersonIcon,
@@ -6,26 +6,15 @@ import {
   ArrowTopRightIcon,
 } from "@radix-ui/react-icons";
 import { Overview } from "./Overview.jsx";
-import Sales from "./Sales.jsx";
-import DownButton from "./DownButton.jsx";
 
-function Tabs2() {
-  return (
-    <Tabs.Root defaultValue="account">
-      <Tabs.List>
-        <Tabs.Trigger value="account">Overview</Tabs.Trigger>
-        <Tabs.Trigger value="overview">Analytics</Tabs.Trigger>
-        <Tabs.Trigger value="reports">Reports</Tabs.Trigger>
-        <Tabs.Trigger value="notifications">Notifications</Tabs.Trigger>
-      </Tabs.List>
-    </Tabs.Root>
-  );
-}
+import DownPopover from "./DownPopover.jsx";
+import MenubarDemo from "./MenubarDemo.jsx";
+import Sales from "./Sales.jsx";
 
 function OverviewCard() {
   return (
     <>
-      <Card style={{ width: "820px" }}>
+      <Card style={{ width: "51em" }}>
         <Flex>
           <Overview />
         </Flex>
@@ -40,10 +29,9 @@ export default function Dashboard() {
       <Flex direction="column" gap="5" width="100%">
         <Flex justify="between">
           <Heading>Dashboard</Heading>
-          <DownButton />
+          <DownPopover />
         </Flex>
-        <Tabs2 />
-        {/* CARDS */}
+        <MenubarDemo />
 
         <Flex direction="row" justify="between">
           <Cards
@@ -73,8 +61,9 @@ export default function Dashboard() {
         </Flex>
         <Flex gap="4" direction="row" width="100%">
           <OverviewCard />
-
-          <Sales />
+          <Card>
+            <Sales />
+          </Card>
         </Flex>
       </Flex>
     </>

@@ -1,4 +1,3 @@
-import "./App.css";
 import { Card, Flex } from "@radix-ui/themes";
 import { Separator } from "@radix-ui/themes";
 import { Navbar } from "./componets/NavBar.jsx";
